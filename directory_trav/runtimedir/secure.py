@@ -8,6 +8,7 @@ class MyHandler(SimpleHTTPRequestHandler):
     def do_GET(self):
         requested_path = self.path.lstrip('/')
 
+	# validate results, do not allow requests to unauthorized locations
         try:
             validated_path = self.validate_path(requested_path)
         except ValueError as e:

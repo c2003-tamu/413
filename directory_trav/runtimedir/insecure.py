@@ -7,7 +7,8 @@ port = 8080
 class MyHandler(SimpleHTTPRequestHandler):
     def do_GET(self):
         file_path = self.path.lstrip('/')
-
+	
+	# simply serve file if exists without santizing results
         if os.path.isfile(file_path):
             self.send_response(200)
             self.wfile.write(open(file_path, 'rb').read())
