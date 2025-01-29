@@ -1,5 +1,8 @@
 # 413 Solutions to Proof of Concepts
 
+## zipscript.sh
+Script to be used when zipping directory, pass folder name in as arg
+
 ## directory_trav
 Directory traversal exploit, essentially does not validate user input and allows users to navigate within the host environment via input exploit
 
