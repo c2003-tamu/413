@@ -12,11 +12,15 @@ posts = []
 """
 ROUTE - /
 METHOD(S) - GET
-QUERY PARAMS - none
+QUERY PARAMS - post
 """
 @app.route('/', methods=['GET'])
 def base():
     # display posts
+    post = request.args.get('post')
+    if post:
+        posts.append(post)
+
     posts_html = "".join(f"<li>{item}</li>" for item in posts)
     return f"""
         <!DOCTYPE html>
@@ -28,9 +32,9 @@ def base():
         </head>
         <body>
             <h1>Submit a Blog Post</h1>
-            <form action="/post" method="POST">
-                <label for="user_input">Enter a post:</label>
-                <input type="text" id="user_input" name="user_input" required>
+            <form action="/" method="GET">
+                <label for="post">Enter a post:</label>
+                <input type="text" id="post" name="post" required>
                 <button type="submit">Submit</button>
             </form>
 
@@ -41,45 +45,29 @@ def base():
         </body>
         </html>
         """
-
-"""
-ROUTE - /post
-METHOD(S) - POST
-QUERY PARAMS - none
-"""
-@app.route('/post', methods=['POST'])
-def post():
-    try:
-        user_input = request.form.get('user_input')
-        posts.append(user_input)
-        return base()
-    except Exception as e:
-        return 400
-
-
-"""
-ROUTE - /safepost
-METHOD(S) - POST
-QUERY PARAMS - none
-"""
-@app.route('/safepost', methods=['POST'])
-def safepost():
-    try:
-        user_input = request.form.get('user_input')
-        posts.append(html.escape(user_input))
-        return safeview()
-    except Exception as e:
-        return 400
 	
+def is_escaped(s):
+    return '&' in s 
+ 
 """
 ROUTE - /safeview
 METHOD(S) - GET
-QUERY PARAMS - none
+QUERY PARAMS - post
 """
 @app.route('/safeview', methods=['GET'])
 def safeview():
-    # display posts
-    posts_html = "".join(f"<li>{html.escape(item)}</li>" for item in posts)
+    post = request.args.get('post')
+    if post:
+        posts.append(html.escape(post))
+
+    # backend logic to make display nice, we don't want to double escape or else it is displayed as escaped text
+    posts_html = ""
+    for item in posts:
+        if is_escaped(item):
+            posts_html = posts_html + f"<li>{item}</li>"
+        else:
+            posts_html = posts_html + f"<li>{html.escape(item)}</li>"
+
     return f"""
         <!DOCTYPE html>
         <html lang="en">
@@ -90,9 +78,9 @@ def safeview():
         </head>
         <body>
             <h1>Submit a Blog Post</h1>
-            <form action="/safepost" method="POST">
-                <label for="user_input">Enter a post (no xss):</label>
-                <input type="text" id="user_input" name="user_input" required>
+            <form action="/safeview" method="GET">
+                <label for="post">Enter a post (no xss):</label>
+                <input type="text" id="post" name="post" required>
                 <button type="submit">Submit</button>
             </form>
 

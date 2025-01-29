@@ -6,3 +6,5 @@ Directory traversal exploit, essentially does not validate user input and allows
 ## auth
 bank application with no authentication and replay vulnerability
 
+## xss
+search engine with reflected xss vulnerability, blog site with stored xss vulnerability
