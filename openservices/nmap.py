@@ -40,9 +40,10 @@ def scan_ports(ip, ports, max_threads=50):
 
 if __name__ == "__main__":
     target_ip = input("enter target IP or hostname: ")
-    target_ports = range(1,1201) 
+    max_port = int(input("enter max port you would like to scan: "))
+    target_ports = range(1,max_port+1) 
     
-    print(f"scanning {target_ip} for open ports...\n")
+    print(f"scanning {target_ip} for open ports in range 1 to {max_port} ...\n")
     
     open_ports = scan_ports(target_ip, target_ports)
     
