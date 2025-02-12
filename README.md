@@ -23,3 +23,6 @@ mock mitm attack, 3 docker containers, one client, one server, one mitm, mitm sk
 
 ## openservices
 remake of nmap tool that scans for open ports on a machine using tcp
+
+## portknocking
+port knocking simulation, connect to ports in correct order to unlock real service
