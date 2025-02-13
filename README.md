@@ -26,3 +26,6 @@ remake of nmap tool that scans for open ports on a machine using tcp
 
 ## portknocking
 port knocking simulation, connect to ports in correct order to unlock real service
+
+## honeypots
+http server intended to be run on ec2/other cloud instance to see logs of connections
