@@ -29,3 +29,6 @@ port knocking simulation, connect to ports in correct order to unlock real servi
 
 ## honeypots
 http server intended to be run on ec2/other cloud instance to see logs of connections
+
+## SPECTRE
+report on SPECTRE CPU vulnerability
