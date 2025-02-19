@@ -32,3 +32,6 @@ http server intended to be run on ec2/other cloud instance to see logs of connec
 
 ## SPECTRE
 report on SPECTRE CPU vulnerability
+
+## Meltdown
+report on MELTDOWN CPU vulnerability
