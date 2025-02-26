@@ -1,4 +1,0 @@
-1. disable nx for 32 bit bin
-2. disable aslr command: echo 0 | sudo tee /proc/sys/kernel/randomize_va_space
-3. compile with: gcc -m32 -fno-stack-protector -z execstack -no-pie buftest.c -o buftest
-4. run with compiler or gdb
