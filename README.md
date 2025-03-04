@@ -35,3 +35,9 @@ report on SPECTRE CPU vulnerability
 
 ## Meltdown
 report on MELTDOWN CPU vulnerability
+
+## buffer
+simple buffer overflow
+
+## ret2libc
+return to libc vulnerability, built on top of buffer
