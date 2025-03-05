@@ -41,3 +41,6 @@ simple buffer overflow
 
 ## ret2libc
 return to libc vulnerability, built on top of buffer
+
+## shellcoding
+code used to generate shellcode that is put into a buffer overflow
