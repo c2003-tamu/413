@@ -47,3 +47,6 @@ code used to generate shellcode that is put into a buffer overflow
 
 ## metasploit
 encode shellcode made in shellcoding using metasploit, show that it still executes after encoded
+
+## yararootkit
+rootkit that hides files from user using ls command. done with LD_PRELOAD.
