@@ -50,3 +50,6 @@ encode shellcode made in shellcoding using metasploit, show that it still execut
 
 ## yararootkit
 rootkit that hides files from user using ls command. done with LD_PRELOAD.
+
+## passwordcracking
+john the ripper used to crack 5 passwords of varying length on linux users
