@@ -53,3 +53,6 @@ rootkit that hides files from user using ls command. done with LD_PRELOAD.
 
 ## passwordcracking
 john the ripper used to crack 5 passwords of varying length on linux users
+
+## rng
+cracking pseudo rng xor encryption used to encrypt myfile.txt
