@@ -1,0 +1,23 @@
+name: "codeql analysis"
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  codeql:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: "Checkout Repo"
+        uses: actions/checkout@v4
+
+      - name: "init codeql"
+        uses: github/codeql-action/init@v3
+        with:
+          languages: python
+
+      - name: "run codeql"
+        uses: github/codeql-action/analyze@v3
+        with:
+          output: csv
