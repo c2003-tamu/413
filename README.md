@@ -59,3 +59,6 @@ cracking pseudo rng xor encryption used to encrypt myfile.txt
 
 ## sast
 Dockerized execution of codeql, codeql github action
+
+## fuzzing
+buffer overflow used to show use case of AFL fuzzing technique
