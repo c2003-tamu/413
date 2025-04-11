@@ -1,0 +1,4 @@
+__libc_start_main(0x400526, 1, 0x7ffeffdcb5c8, 0x400550 <unfinished ...>
+puts("malware"malware
+)                                                           = 8
++++ exited (status 0) +++
